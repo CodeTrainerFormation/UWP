@@ -29,12 +29,13 @@ namespace _4_Json.Views
         {
             this.InitializeComponent();
 
-            //this.LoadJsonAsync();
+            this.LoadJsonAsync();
         }
 
         public async void LoadJsonAsync()
         {
-            StorageFile sampleFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri(@"ms-appx:///Data/one_restaurant.json"));
+            StorageFile sampleFile 
+                = await StorageFile.GetFileFromApplicationUriAsync(new Uri(@"ms-appx:///Data/one_restaurant.json"));
 
             string contentFileJson = await FileIO.ReadTextAsync(sampleFile);
 
