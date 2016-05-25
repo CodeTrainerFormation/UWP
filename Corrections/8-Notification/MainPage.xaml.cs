@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace _7_Badge
+namespace _8_Notification
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -28,20 +28,16 @@ namespace _7_Badge
             this.InitializeComponent();
         }
 
-        private void DisplayBadge_Click(object sender, RoutedEventArgs e)
+        private void DisplayToast_Click(object sender, RoutedEventArgs e)
         {
             Windows.Data.Xml.Dom.XmlDocument doc = new Windows.Data.Xml.Dom.XmlDocument();
-            string xml = File.ReadAllText("Templates/Badge.xml");
+            string xml = File.ReadAllText("Templates/Notification.xml");
             doc.LoadXml(xml);
 
-            BadgeNotification badge = new BadgeNotification(doc);
-            BadgeUpdateManager.CreateBadgeUpdaterForApplication().Update(badge);
-        }
+            var toast = new ToastNotification(doc);
+            var notifier = ToastNotificationManager.CreateToastNotifier();
 
-        private void CleanBadge_Click(object sender, RoutedEventArgs e)
-        {
-            BadgeUpdateManager.CreateBadgeUpdaterForApplication().StopPeriodicUpdate();
-            BadgeUpdateManager.CreateBadgeUpdaterForApplication().Clear();
+            notifier.Show(toast);
         }
     }
 }
