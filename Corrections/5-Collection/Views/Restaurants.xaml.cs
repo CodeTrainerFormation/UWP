@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -24,9 +25,20 @@ namespace _5_Collection.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Restaurants : Page
+    public sealed partial class Restaurants : Page, INotifyPropertyChanged
     {
-        public ObservableCollection<Restaurant> RestaurantsList { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        private ObservableCollection<Restaurant> _restaurantList;
+
+        public ObservableCollection<Restaurant> RestaurantsList
+        {
+            get { return _restaurantList; }
+            set {
+                _restaurantList = value;
+                OnPropertyChanged("RestaurantsList");
+            }
+        }
+
 
         public Restaurants()
         {
@@ -44,6 +56,18 @@ namespace _5_Collection.Views
             string contentRestaurantsJson = await FileIO.ReadTextAsync(f);
 
             RestaurantsList = JsonConvert.DeserializeObject<ObservableCollection<Restaurant>>(contentRestaurantsJson);
+        }
+
+        private void GoToDetail_Click(object sender, ItemClickEventArgs e)
+        {
+            Restaurant restaurantClicked = (Restaurant)e.ClickedItem;
+
+            Frame.Navigate(typeof(Detail), restaurantClicked);
+        }
+
+        private void OnPropertyChanged(string property)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
     }
 }
