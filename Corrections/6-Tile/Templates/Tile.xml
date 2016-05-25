@@ -1,0 +1,13 @@
+﻿<tile>
+  <visual>
+    <binding template="TileSmall">
+    </binding>
+    <binding template="TileMedium">
+    </binding>
+    <binding template="TileWide">
+    </binding>
+    <binding template="TileLarge">
+    </binding>
+  </visual>
+</tile>
+

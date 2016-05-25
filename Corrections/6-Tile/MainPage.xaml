@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="_6_Tile.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_6_Tile"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Modifier la tuile de l'application" Click="EditTile_Click" />
+            <Button Content="Nettoyer la tuile de l'application" Click="CleanTile_Click" />
+        </StackPanel>
+    </Grid>
+</Page>
