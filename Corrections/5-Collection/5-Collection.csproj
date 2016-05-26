@@ -92,6 +92,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Data\restaurants.json" />
     <None Include="project.json" />
   </ItemGroup>

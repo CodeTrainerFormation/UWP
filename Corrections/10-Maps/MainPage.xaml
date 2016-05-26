@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="_10_Maps.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_10_Maps"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:m="using:Windows.Services.Maps"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="tbSearch" Width="150" />
+                <Button Content="Rechercher" Click="Search_Click" />
+            </StackPanel>
+            <ProgressBar IsIndeterminate="True" x:Name="pbSearch" Visibility="Collapsed" />
+            <ListView ItemsSource="{x:Bind LocationsFound}"
+                IsItemClickEnabled="True" 
+                ItemClick="PinToMap_Click">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="m:MapLocation">
+                        <StackPanel>
+                            <TextBlock>
+                                <Run Text="{x:Bind Address.StreetNumber}" />
+                                <Run Text="{x:Bind Address.Street}" />
+                                <Run Text="," />
+                                <Run Text="{x:Bind Address.Town}" />
+                                <Run Text="," />
+                                <Run Text="{x:Bind Address.Country}" />
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <maps:MapControl MapServiceToken="oMScCunVqqTk1gN2RkKE~exa4AeosZQpvwfsZmfXbsw~AtZ_rzodMIE1QoRcxoar2w5MorP4akvOgWM4_HI_gAH9mbhMFYemctfhoZu7k1t9" Grid.Column="1" x:Name="mcMap" />
+        
+    </Grid>
+</Page>

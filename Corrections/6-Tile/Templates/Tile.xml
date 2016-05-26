@@ -2,12 +2,33 @@
 <tile>
   <visual>
     <binding template="TileSmall">
+      <image src="Assets/Images/city.jpg" placement="peek" />
+      <text hint-style="caption" hint-align="center" hint-wrap="true">Alexis VERNOT</text>
     </binding>
     <binding template="TileMedium">
+      <group>
+        <subgroup hint-weight="1" />
+        <subgroup hint-weight="2">
+          <image src="Assets/Images/city.jpg" hint-crop="circle" />
+        </subgroup>
+        <subgroup hint-weight="1" />
+      </group>
+      <text hint-style="subtitle" hint-align="center">Alexis VERNOT</text>
     </binding>
     <binding template="TileWide">
+      <image src="Assets/Images/city.jpg" placement="peek" />
+      <text hint-style="subtitle" hint-align="center">Alexis VERNOT</text>
+      <text hint-style="captionsubtle" hint-wrap="true" hint-align="center">Ceci est une courte description de moi</text>
     </binding>
     <binding template="TileLarge">
+      <group>
+        <subgroup hint-weight="1" />
+        <subgroup hint-weight="2">
+          <image src="Assets/Images/city.jpg" hint-crop="circle" />
+        </subgroup>
+        <subgroup hint-weight="1" />
+      </group>
+      <text hint-style="subtitle" hint-align="center">Alexis VERNOT</text>
     </binding>
   </visual>
 </tile>

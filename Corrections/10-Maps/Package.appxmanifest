@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="66a7f5c6-dd34-4614-ba57-119d0dedd904" Publisher="CN=Alexis" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="66a7f5c6-dd34-4614-ba57-119d0dedd904" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="3ac56380-5a92-42cf-a0ec-93e565cb2495" Publisher="CN=Alexis" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="3ac56380-5a92-42cf-a0ec-93e565cb2495" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>6-Tile</DisplayName>
+    <DisplayName>10-Maps</DisplayName>
     <PublisherDisplayName>Alexis</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -14,12 +14,9 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="_6_Tile.App">
-      <uap:VisualElements DisplayName="6-Tile" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="6-Tile" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets/Square310x310Logo.png" Square71x71Logo="Assets\Square71x71Logo.png">
-          <uap:ShowNameOnTiles>
-            <uap:ShowOn Tile="square310x310Logo" />
-          </uap:ShowNameOnTiles>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="_10_Maps.App">
+      <uap:VisualElements DisplayName="10-Maps" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="10-Maps" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
@@ -27,5 +24,6 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <DeviceCapability Name="location" />
   </Capabilities>
 </Package>
